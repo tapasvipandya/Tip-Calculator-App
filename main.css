@@ -1,0 +1,24 @@
+@import url("https://fonts.googleapis.com/css2?family=Space+Mono:wght@700&display=swap");
+
+:root {
+  --body-colour: #c5e4e7;
+  --color-white:#ffffff;
+  --primary-font-family: "Space Mono", monospace;
+  --primary-font-weight:700;
+  --right-container-colour:#00474B;
+
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  background: var(--body-colour);
+  font-family: var(--primary-font-family);
+}
+
+.app__title {
+  width: 100%;
+  text-align: center;
+  margin-top: 168px;
+}
