@@ -2,11 +2,12 @@
 
 :root {
   --body-colour: #c5e4e7;
-  --color-white:#ffffff;
+  --color-white: #ffffff;
   --primary-font-family: "Space Mono", monospace;
-  --primary-font-weight:700;
-  --right-container-colour:#00474B;
-
+  --primary-font-weight: 700;
+  --tag-color: #5e7a7d;
+  --primary-cyan: #00474b;
+  --textbox-color: #f3f9fa;
 }
 
 body {
@@ -17,8 +18,327 @@ body {
   font-family: var(--primary-font-family);
 }
 
+input {
+  text-align: right;
+  font-size: 24px;
+  font-family: var(--primary-font-family);
+  font-weight: var(--primary-font-weight);
+  color: var(--primary-cyan);
+}
+
 .app__title {
   width: 100%;
   text-align: center;
-  margin-top: 168px;
+  margin-top: 50px;
+}
+
+.app__container {
+  width: 375px;
+  height: 920px;
+  background: var(--color-white);
+  margin-top: 41px;
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: repeat(2, 1fr);
+  border-radius: 25px 25px 0px 0px;
+  overflow: hidden;
+}
+
+.container__left,
+.container__right {
+  margin: 32px 32px;
+}
+
+.bill__amount--tag,
+.tip__amount--tag,
+.person__num--tag {
+  font-weight: var(--primary-font-weight);
+  color: var(--tag-color);
+  font-size: 16px;
+}
+
+.amount__display--tag span,
+.total__display--tag span {
+  font-size: 13px;
+  color: #7f9d9f;
+}
+
+.bill__amount {
+  margin-bottom: 32px;
+}
+
+.bill__amount--value {
+  position: relative;
+}
+
+.bill__amount--value::before {
+  content: url(images/icon-dollar.svg);
+  position: absolute;
+  top: 22px;
+  left: 26px;
+}
+
+.billValue,
+.personNum {
+  width: 311px;
+  height: 48px;
+  margin-top: 6px;
+  border-style: none;
+  background: var(--textbox-color);
+  border-radius: 5px;
+  padding: 0;
+  border: 2px solid rgba(0, 0, 0, 0);
+}
+
+.billValue::placeholder,
+.personNum::placeholder {
+  font-size: 24px;
+  font-family: var(--primary-font-family);
+  font-weight: var(--primary-font-weight);
+  position: absolute;
+  right: 0;
+  top: 6px;
+  margin-right: 17px;
+  color: var(--primary-cyan);
+  opacity: 0.35;
+}
+
+.tip__amount--value {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: repeat(3, 1fr);
+  margin-top: 16px;
+  gap: 16px 16px;
+  width: 311px;
+  height: 216px;
+}
+
+.tip__amount--value .numValue {
+  font-weight: var(--primary-font-weight);
+  font-size: 24px;
+  line-height: 36px;
+  color: var(--color-white);
+  background: var(--primary-cyan);
+  text-align: center;
+  height: 48px;
+  border-radius: 5px;
+  font-family: var(--primary-font-family);
+  border: none;
+  width: 147px;
+  padding: 0;
+}
+
+.customValue {
+  width: 147px;
+  height: 48px;
+}
+
+.customVal {
+  height: 48px;
+  border-style: none;
+  background: var(--textbox-color);
+  border-radius: 5px;
+  position: relative;
+  padding: 0;
+  width: 147px;
+  border: 2px solid rgba(0, 0, 0, 0);
+}
+
+.customVal::placeholder {
+  font-family: var(--primary-font-family);
+  font-weight: var(--primary-font-weight);
+  font-size: 24px;
+  line-height: 36px;
+  color: #547878;
+  position: absolute;
+  top: 6px;
+  left: 28px;
+}
+
+.person__num {
+  margin-top: 32px;
+}
+
+.person__num--value {
+  margin-top: 6px;
+  position: relative;
+}
+
+.person__num--value::before {
+  content: url(images/icon-person.svg);
+  position: absolute;
+  top: 22px;
+  left: 26px;
+}
+
+.container__right {
+  background: var(--primary-cyan);
+  border-radius: 15px;
+  height: 257px;
+}
+
+.result__section {
+  margin-left: 24px;
+}
+
+.amount__display,
+.total__display {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.amount__display {
+  margin-top: 37px;
+}
+.total__display {
+  margin-top: 20px;
+}
+.amount__display--tag,
+.total__display--tag {
+  color: var(--color-white);
+  font-weight: var(--primary-font-weight);
+}
+
+.displayTotal,
+.displayAmount {
+  margin-right: 20px;
+  width: 148px;
+  height: 40px;
+  position: relative;
+  padding: 0;
+  border-style: none;
+  outline: none;
+  background: var(--primary-cyan);
+}
+
+.displayTotal::placeholder,
+.displayAmount::placeholder {
+  font-size: 48px;
+  position: absolute;
+  top: -16px;
+  font-family: var(--primary-font-family);
+  font-weight: var(--primary-font-weight);
+  color: #26c2ae;
+}
+
+.cta__section {
+  margin-top: 32px;
+  text-align: center;
+  margin-bottom: 24px;
+}
+
+.resetBtn {
+  width: 281px;
+  height: 48px;
+  border-radius: 5px;
+  background: #26c2ae;
+  font-family: var(--primary-font-family);
+  font-weight: var(--primary-font-weight);
+  color: var(--primary-cyan);
+  font-size: 20px;
+  font-style: normal;
+  border-style: none;
+}
+
+/* CSS for the active states */
+
+.billValue:hover,
+.personNum:hover {
+  border: 2px solid #26c2ae;
+  cursor: pointer;
+}
+
+.billValue:focus,
+.personNum:focus {
+  border: 2px solid #26c2ae;
+  outline: none;
+}
+
+.resetBtn:hover {
+  background: #9fe8df;
+  color: var(--primary-cyan);
+  cursor: pointer;
+}
+
+.customVal:hover {
+  border: 2px solid #26c2ae;
+  cursor: pointer;
+}
+
+.customVal:focus {
+  border: 2px solid #26c2ae;
+  outline: none;
+}
+
+.numValue:hover {
+  background: #9fe8df;
+  color: var(--primary-cyan);
+  cursor: pointer;
+}
+
+.numValue:focus {
+  background: #9fe8df;
+  color: var(--primary-cyan);
+}
+
+/* Media Query for Desktop Layout */
+
+@media only screen and (min-width: 376px) {
+  .app__container {
+    width: 920px;
+    height: 481px;
+    margin: 88px auto auto auto;
+    grid-template-rows: 1fr;
+    grid-template-columns: repeat(2, 1fr);
+    border-radius: 25px;
+  }
+
+  .tip__amount--value {
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(2, 48px);
+    width: 371px;
+    height: 152px;
+    gap: 14px 16px;
+  }
+
+  .tip__amount--value .numValue {
+    width: 117px;
+  }
+
+  .customVal {
+    width: 117px;
+  }
+
+  .customVal::placeholder {
+    left: 15px;
+  }
+
+  .billValue,
+  .personNum {
+    width: 371px;
+  }
+
+  .person__num {
+    margin-top: 12px;
+  }
+
+  .container__right {
+    height: 417px;
+  }
+
+  .amount__display {
+    margin-top: 40px;
+  }
+  .total__display {
+    margin-top: 51px;
+  }
+
+  .cta__section {
+    margin-top: 145px;
+  }
+
+  .resetBtn {
+    width: 333px;
+  }
 }
