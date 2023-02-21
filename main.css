@@ -26,6 +26,17 @@ input {
   color: var(--primary-cyan);
 }
 
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 9px;
+}
+
+.person__num--value input[type="text"],
+.bill__amount--value input[type="text"] {
+  padding-right: 17px;
+}
+
 .app__title {
   width: 100%;
   text-align: center;
@@ -44,11 +55,12 @@ input {
   overflow: hidden;
 }
 
-.container__left,
-.container__right {
+.container__left {
   margin: 32px 32px;
 }
-
+.container__right {
+  margin: 24px 24px;
+}
 .bill__amount--tag,
 .tip__amount--tag,
 .person__num--tag {
@@ -80,7 +92,7 @@ input {
 
 .billValue,
 .personNum {
-  width: 311px;
+  width: 290px;
   height: 48px;
   margin-top: 6px;
   border-style: none;
@@ -178,6 +190,9 @@ input {
   width: 327px;
 }
 
+.container__left {
+  width: 311px;
+}
 
 .amount__display,
 .total__display {
@@ -224,13 +239,15 @@ input {
   font-family: var(--primary-font-family);
   font-weight: var(--primary-font-weight);
   color: #26c2ae;
-  font-size: 48px;
+  font-size: 32px;
 }
 
 .cta__section {
   margin-top: 32px;
   text-align: center;
   margin-bottom: 24px;
+  width: 281px;
+  margin-left: 24px;
 }
 
 .resetBtn {
@@ -333,7 +350,7 @@ input {
     width: 413px;
   }
 
-  .result__section{
+  .result__section {
     margin-left: 20px;
   }
   .amount__display {
@@ -347,9 +364,39 @@ input {
 
   .cta__section {
     margin-top: 145px;
+    margin-left: 40px;
   }
 
   .resetBtn {
     width: 333px;
   }
+
+  .amount__display--num h1,
+  .total__display--num h1 {
+    font-size: 48px;
+  }
+}
+
+.person__num-text {
+  display: flex;
+  width: 500px;
+}
+
+.hidden {
+  display: none;
+}
+
+.error__message {
+  font-family: "Space Mono";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 24px;
+  text-align: right;
+  color: #e17457;
+  margin-left: 5rem;
+}
+
+.red-border {
+  border: 2px solid #e17052;
 }

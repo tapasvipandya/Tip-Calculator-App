@@ -27,36 +27,41 @@
           <div class="bill__amount--value">
             <input
               id="billValue"
-              type="text"
+              type="number"
               placeholder="0"
               class="billValue"
+              maxlength="15"
             />
           </div>
         </div>
         <div class="tip__amount">
           <div class="tip__amount--tag">Select Tip %</div>
           <div class="tip__amount--value">
-            <button id="num1" class="numValue">5%</button>
-            <button id="num2" class="numValue">10%</button>
-            <button id="num3" class="numValue">15%</button>
-            <button id="num4" class="numValue">20%</button>
-            <button id="num5" class="numValue">25%</button>
+            <button id="num1" class="numValue" value="5">5%</button>
+            <button id="num2" class="numValue" value="10">10%</button>
+            <button id="num3" class="numValue" value="15">15%</button>
+            <button id="num4" class="numValue" value="20">20%</button>
+            <button id="num5" class="numValue" value="25">25%</button>
             <div class="customValue">
               <input
                 id="value6"
-                type="text"
+                type="number"
                 placeholder="Custom"
                 class="customVal"
+                maxlength="5"
               />
             </div>
           </div>
         </div>
         <div class="person__num">
-          <div class="person__num--tag">Number of People</div>
+          <div class="person__num-text">
+            <div class="person__num--tag">Number of People</div>
+            <div class="error__message hidden">Can't be zero</div>
+          </div>
           <div class="person__num--value">
             <input
               id="personNum"
-              type="text"
+              type="number"
               class="personNum"
               placeholder="0"
             />
@@ -70,7 +75,7 @@
               Tip Amount<br /><span>/ person</span>
             </div>
             <div class="amount__display--num">
-            <h1>$0.00</h1>
+              <h1 class="display__tip-value">$0.00</h1>
             </div>
           </div>
           <div class="total__display">
@@ -78,7 +83,7 @@
               Total<br /><span>/ person</span>
             </div>
             <div class="total__display--num">
-            <h1>$0.00</h1>
+              <h1 class="display__total-value">$0.00</h1>
             </div>
           </div>
         </div>
